@@ -31,5 +31,4 @@ def minOperations(n):
         if x + 1 < dp[i]:
             dp[i] = x + 1
 
-    return dp[n]
-
+    return dp
