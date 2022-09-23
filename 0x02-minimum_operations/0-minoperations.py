@@ -3,8 +3,6 @@
 Minimum operations
 """
 
-import sys
-
 
 def minOperations(n):
     """
