@@ -45,7 +45,8 @@ int slide_line(int *line, size_t size, int direction)
 			break;
 		if (mark == 0)
 		{	p1 = (direction == SLIDE_LEFT) ? p1 + 1 : p1;
-			p1 = (direction == SLIDE_RIGHT) ? p1 - 1 : p1;
+    // p1 = (direction == SLIDE_RIGHT) ? p1 - 1 : p1;
+			p1 = (direction == SLIDE_RIGHT) ? p1 - 2 : p1;
 			p2 = (direction == SLIDE_LEFT) ? p1 + 1 : p2;
 			p2 = (direction == SLIDE_RIGHT) ? p1 - 1 : p2; }
 	}
