@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-
-import sys
-
 """
 Given pile of coins of different values determine fewest number
 of coins needed to meet a given amount total
