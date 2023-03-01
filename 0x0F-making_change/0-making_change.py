@@ -10,7 +10,7 @@ of coins needed to meet a given amount total
 
 def makeChange(coins, total):
     """
-    
+    returns total and coins
     """
 
     if total < 0:
