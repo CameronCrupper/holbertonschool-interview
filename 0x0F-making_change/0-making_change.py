@@ -19,4 +19,4 @@ def makeChange(coins, total):
         for j in range(len(coins)):
             if coins[j] <= i:
                 array[i] = min(array[i], array[i - coins[j]] + 1)
-    return array[i] if array[i] != float('inf') else -1
+    return array[i] if array[i] != float('inf') else - 1
