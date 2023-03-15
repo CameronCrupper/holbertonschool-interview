@@ -13,21 +13,39 @@ goes first and both players play optimally,
 determine who the winner of each game is.
 """
 
+
 def isWinner(x, nums):
     """
     a winner is found at the end
     """
-    if len(nums) == 0:
+    maria, ben, primes, maxFactor = 0, 0, 0, 0
+    maxFactors = [3, 10, 31, 100]
+
+    for i in range(x):
+        max = nums[i]
+
+        if max / 10 <= 1:
+            maxFactor = maxFactors[0]
+        elif max / 10 <= 10:
+            maxFactor = maxFactors[1]
+        elif max / 10 <= 100:
+            maxFactor = maxFactors[2]
+        elif max / 10 <= 1000:
+            maxFactor = maxFactors[3]
+
+        for n in range(2, max + 1):
+            for f in range(2, maxFactor):
+                if n % f is 0:
+                    continue
+                primes += 1
+        if primes % 2 is 0:
+            ben += 1
+        else:
+            maria += 1
+        primes = 0
+    if maria == ben:
         return None
-    if len(nums) == 1:
-        return "Maria"
-    if x == 1:
-        return "Maria" if nums[0] == 1 else "Ben"
-    n = len(nums)
-    for i in range(n):
-        if nums[i] in nums[i+1:n]:
-            nums.remove(nums[i])
-    return isWinner(x-1, nums)
+    return "Maria" if maria > ben else "Ben"
 
 # def is_prime(x, nums):
 #     if nums > 1:
